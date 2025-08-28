@@ -27,9 +27,9 @@ Data preparation is a crucial first step, ensuring the data is clean and suitabl
 ### Modelling
 With the data prepared, the next step was to build and train machine learning models to classify sentiment. The modeling process involved:
 
-1. Feature Extraction: The cleaned text was converted into numerical features using TfidfVectorizer, a technique that reflects how important a word is to a document in a collection or corpus.
+1. Feature Extraction: The cleaned text was converted into numerical features using TfidfVectorizer, a technique that reflects how important a word is to a            document in a collection or corpus.
 
-2. Model Selection and Training: A pipeline was created to streamline the workflow of transforming the text and feeding it into different classification models. Five machine learning models were chosen and evaluated using GridSearchCV and a StratifiedKFold cross-validation strategy to find the best-performing model and its optimal hyperparameters. The models evaluated were:
+2. Model Selection and Training: A pipeline was created to streamline the workflow of transforming the text and feeding it into different classification models.       Five machine learning models were chosen and evaluated using GridSearchCV and a StratifiedKFold cross-validation strategy to find the best-performing model and     its optimal hyperparameters. The models evaluated were:
 
  Logistic Regression: Achieved an accuracy of 91% on the test data.
  
