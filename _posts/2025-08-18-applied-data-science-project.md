@@ -31,11 +31,15 @@ With the data prepared, the next step was to build and train machine learning mo
 
 2. Model Selection and Training: A pipeline was created to streamline the workflow of transforming the text and feeding it into different classification models. Five machine learning models were chosen and evaluated using GridSearchCV and a StratifiedKFold cross-validation strategy to find the best-performing model and its optimal hyperparameters. The models evaluated were:
 
-Logistic Regression: Achieved an accuracy of 91% on the test data.
-Support Vector Machine (SVM): Achieved the highest accuracy of 92% on the test data.
-Random Forest: Achieved an accuracy of 90% on the test data.
-XGBoost: Achieved an accuracy of 88% on the test data.
-LightGBM: Achieved an accuracy of 90% on the test data.
+ Logistic Regression: Achieved an accuracy of 91% on the test data.
+ 
+ Support Vector Machine (SVM): Achieved the highest accuracy of 92% on the test data.
+ 
+ Random Forest: Achieved an accuracy of 90% on the test data.
+ 
+ XGBoost: Achieved an accuracy of 88% on the test data.
+ 
+ LightGBM: Achieved an accuracy of 90% on the test data.
 
 3. Final Model Selection: Based on the results, the SVM model was selected as the final model due to its superior accuracy.
    
@@ -47,11 +51,15 @@ The analysis and recommendations are based on a deeper look at the sentiment and
 
 Topic modeling with Latent Dirichlet Allocation (LDA) was applied to group discussions into five distinct topics. The best-performing sentiment model was then used to predict the sentiment of each topic, providing the following actionable insights:
 
-Topic ID	Top Keywords	Positive Ratio	Negative Ratio	Recommended Action
+Topic ID	Top Keywords	 Positive Ratio	 Negative Ratio	    Recommended Action
 Topic 4	shirt shirts jeans pants jacket	0.74	0.26	🟢 High satisfaction. Kapital can leverage this sentiment to validate premium pricing.
+
 Topic 3	like shoes im wear look	0.69	0.31	🟢 High satisfaction. This indicates strong brand reception. Kapital should use these keywords in engagement.
+
 Topic 0	love outfit post cool fit	0.65	0.35	🟢 High satisfaction. This can be used to inform product strategies to match trends.
+
 Topic 2	like dont people think clothes	0.65	0.35	🟢 High satisfaction. Consider promoting products related to this theme and using it in marketing campaigns.
+
 Topic 1	fit pants im like bro	0.54	0.46	ℹ️ Moderate satisfaction. Kapital should investigate fit-related issues to optimize its product and pricing strategies.
 
 Deeper Analysis for Kapital's Strategies:
