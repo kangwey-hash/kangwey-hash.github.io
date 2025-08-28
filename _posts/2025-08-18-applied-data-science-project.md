@@ -7,16 +7,13 @@ categories: ITD214
 ## Project Background
 Business Goal: To optimize the Kapital fashion brand's product offerings, pricing strategies, and customer engagement to maximize sales and brand loyalty in the global market.
 
-This project, titled "Analysing Customer Sentiments and Product Categories from Reddit," directly supports this business goal by leveraging text analytics from online fashion discussions on social media to inform and optimize Kapital’s global product, pricing, and engagement strategies. It applies natural language processing (NLP) and machine learning techniques to extract meaningful business insights from unstructured text data from Reddit.
+This project, titled "Analysing Customer Sentiments and Product Categories from Reddit," directly supports this business goal by leveraging text analytics from online fashion discussions on social media to inform and optimize Kapital’s global product, pricing, and engagement strategies. Our team's collective objective was to apply natural language processing (NLP) and machine learning techniques to extract meaningful business insights from unstructured text data from Reddit.
 
-The core problem statement addressed by this project is the challenge of manually sifting through vast amounts of online forum data to gauge public opinion and identify trends. The project automates this process by combining sentiment analysis and topic modeling to provide actionable insights.
-
-As this is an individual project, the objective that you are working on is the complete project goal, which is to leverage text analytics to inform and optimize Kapital's business strategies.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
+The core problem statement addressed by our group is the challenge of manually sifting through vast amounts of online forum data to gauge public opinion and identify trends. The project automates this process by combining sentiment analysis and topic modeling to provide actionable insights.
 
 ## Work Accomplished
-Document your work done to accomplish the outcome
+Documenting the work done to accomplish the outcome is crucial for a data science project portfolio. This section details the complete workflow, from the raw data to the final insights.
+The project followed a structured data science workflow, from data preparation to model evaluation.
 
 ### Data Preparation
 Data preparation is a crucial first step, ensuring the data is clean and suitable for analysis. The process involved:
@@ -26,8 +23,6 @@ Data preparation is a crucial first step, ensuring the data is clean and suitabl
 2. Cleaning and Preprocessing: The combined data was thoroughly cleaned by dropping duplicate entries and handling any missing values, resulting in a robust dataset of 44,454 unique entries.
 
 3. Text Normalization: The text data underwent several normalization steps essential for NLP. This included converting all text to lowercase to ensure consistency, removing punctuation, and filtering out common English stop words (such as "the," "is," and "a") to focus on more meaningful keywords.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
 
 ### Modelling
 With the data prepared, the next step was to build and train machine learning models to classify sentiment. The modeling process involved:
@@ -44,12 +39,8 @@ LightGBM: Achieved an accuracy of 90% on the test data.
 
 3. Final Model Selection: Based on the results, the SVM model was selected as the final model due to its superior accuracy.
    
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
-
 ### Evaluation
 Model performance was evaluated using classification reports and confusion matrices. While the models showed high overall accuracy, the confusion matrix revealed a key insight: the models were highly accurate at predicting positive sentiment but were less effective at correctly identifying negative sentiment. This resulted in a higher number of false negatives (negative comments mistakenly classified as positive), indicating a potential bias towards the majority class (positive sentiment) in the training data.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
 
 ## Recommendation and Analysis
 The analysis and recommendations are based on a deeper look at the sentiment and topics identified from the data. The goal is to provide actionable insights that can directly influence Kapital's business strategies.
