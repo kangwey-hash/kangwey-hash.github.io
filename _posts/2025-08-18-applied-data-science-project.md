@@ -55,82 +55,63 @@ This project automates the process using **NLP + Machine Learning**, combining *
 | **1**    | fit, pants, im, like, bro        | 0.54           | 0.46           | ⚠️ Moderate satisfaction → investigate sizing/fit issues |
 
 ---
-
-### 📌 Recommendations
-## 🔎 Deeper Topic Analysis  
+## 🔎 Deeper Topic Analysis & Recommendations
 
 📊 **Business Objectives & Actionable Insights:**  
 Our topic modeling and sentiment analysis revealed consistent **high customer satisfaction across most themes**, with one area (fit & pants) showing slightly more mixed reviews. Below is the breakdown:
 
----
-
-### 🧵 Topic 2: *"like dont people think clothes"*
-- **Reviews analyzed:** 11,157  
-- **Sentiment distribution:** 👍 Positive: **82.6%** | 👎 Negative: **17.4%**  
-- **Sample reviews:**  
-  - *“military surplus stores would best websites buy military surplus”*  
-  - *“need help finding rings… still cool shape design”*  
-  - *“bought used paul smith suit… thought process it’ll look way better than Jos Banks at same price”*  
-- ✅ **Action:** High satisfaction. Kapital should **promote products/services** tied to general apparel discussions and highlight them in marketing campaigns.
+| Topic ID | Top Keywords | Reviews Analyzed | Positive % | Negative % | Recommendation |
+|----------|--------------|----------------|------------|------------|----------------|
+| 0 | love outfit post cool fit | 7,505 | 82.7% | 17.3% | Leverage styling discussions in trend-driven product launches and social engagement campaigns. |
+| 1 | fit pants im like bro | 9,528 | 77.4% | 22.6% | Investigate fit-related issues (pants sizing, product descriptions) to improve customer satisfaction. |
+| 2 | like dont people think clothes | 11,157 | 82.6% | 17.4% | Promote products/services related to general apparel discussions in marketing campaigns. |
+| 3 | like shoes im wear look | 8,888 | 84.9% | 15.1% | Emphasize fit and comfort in shoes and apparel; integrate keywords into engagement content. |
+| 4 | shirt shirts jeans pants jacket | 7,376 | 87.1% | 12.9% | Validate premium pricing; highlight staple apparel as flagship items. |
 
 ---
 
-### 👟 Topic 3: *"like shoes im wear look"*
-- **Reviews analyzed:** 8,888  
-- **Sentiment distribution:** 👍 Positive: **84.9%** | 👎 Negative: **15.1%**  
-- **Sample reviews:**  
-  - *“underwear guys wear… thick legs lifting… need brand that actually fits”*  
-  - *“briefs still uncool… switching styles helped”*  
-  - *“tall skinny boys… size shoe shopping style footwear doesn’t look like clown shoes”*  
-- ✅ **Action:** Strong satisfaction around footwear & wearability. Kapital can **emphasize fit + comfort in shoes and apparel** within engagement content.
-
----
-
-### 👖 Topic 1: *"fit pants im like bro"*
-- **Reviews analyzed:** 9,528  
-- **Sentiment distribution:** 👍 Positive: **77.4%** | 👎 Negative: **22.6%**  
-- **Sample reviews:**  
-  - *“fabletics best deal around price & quality… shorts high quality”*  
-  - *“vineyard vines polo neckline too small…”*  
-  - *“pants short legs long torso… finding shirts difficult, pants nightmare”*  
-- ⚠️ **Action:** Moderate satisfaction. Kapital should **investigate fit-related issues (pants/sizing)**. This could be linked to sizing consistency, body diversity, or unclear product descriptions.
-
----
-
-### 👕 Topic 4: *"shirt shirts jeans pants jacket"*
-- **Reviews analyzed:** 7,376  
-- **Sentiment distribution:** 👍 Positive: **87.1%** | 👎 Negative: **12.9%**  
-- **Sample reviews:**  
-  - *“find denim jacket that’s right length…”*  
-  - *“Charles Tyrwhitt shirts… thin see-through issue”*  
-  - *“advice for suit + pastel pink styling”*  
-- ✅ **Action:** Very high satisfaction around staple apparel (shirts, jeans, jackets). Kapital can **confidently validate premium pricing** here and push these as flagship items.
-
----
-
-### 👗 Topic 0: *"love outfit post cool fit"*
-- **Reviews analyzed:** 7,505  
-- **Sentiment distribution:** 👍 Positive: **82.7%** | 👎 Negative: **17.3%**  
-- **Sample reviews:**  
-  - *“anyone know sunglasses protect UV… Vans shades…”*  
-  - *“thinnest breathable boxer briefs… Lululemon mesh better than others”*  
-  - *“Paul Vincent Seh Kelly passes away… warm character frequent contributor”*  
-- ✅ **Action:** Strong satisfaction tied to **outfits & styling discussions**. Kapital can **leverage this in trend-driven product launches** and social engagement.
-
----
-
-## 📌 Summary of Insights  
+### 📌 Summary of Insights  
 
 - **High Satisfaction (Topics 0, 2, 3, 4):** Customers show consistently positive sentiment (82–87%) across core categories: *outfits, shirts, jeans, jackets, shoes*. These themes validate **Kapital’s premium product strategy** and can be leveraged in **marketing campaigns**.  
 - **Moderate Satisfaction (Topic 1 - Fit & Pants):** Only ~77% positive. This is a **critical product signal**. Kapital should **review sizing issues** (pants fit, shirt necklines) and possibly refine **size charts, body-inclusive fits, or clearer product details**.  
 - **Strategic Opportunity:** By addressing fit-related concerns, Kapital can **reduce negative sentiment by ~10–15%**, boosting customer satisfaction and strengthening its premium positioning.  
+ 
+
+### 📌 Recommendations
+Based on the deeper topic analysis and sentiment insights, here are strategic recommendations for Kapital:
 
 ---
 
+### 🛍️ Product Recommendations
+- Focus on **style-conscious, versatile, high-quality apparel**.  
+- Highlight **unique/vintage pieces, seasonal collections, and limited editions**.  
+- Offer **bundles** (e.g., shirts + pants) to increase **Average Order Value (AOV)**.  
+- Provide **fit guides and size recommendations** to reduce returns and enhance customer satisfaction.
 
-- **Product Strategy** → Strengthen high-performing categories (shirts, jeans, shoes, outfits). Investigate sizing/fit issues in pants.  
-- **Pricing Strategy** → Positive sentiment supports Kapital’s premium pricing model. Reinforce value by highlighting craftsmanship.  
-- **Engagement Strategy** → Use customer language (“cool fit”, “love outfit”) in marketing. Proactively engage in “fit” discussions to address concerns.  
+---
+
+### 💰 Pricing Recommendations
+- Set **premium pricing** for high-demand or exclusive style items.  
+- Use **value-based bundles** for essentials to encourage larger purchases.  
+- Ensure **competitive pricing** for standard items to maintain market share.  
+- Offer **strategic promotions** around trends or seasonal launches.
+
+---
+
+### 📢 Engagement & Marketing Recommendations
+- Encourage **user-generated content (UGC)** like “Outfit of the Day” posts.  
+- Run **social campaigns** highlighting positive reviews and real-life wearability.  
+- Provide **outfit guides and style tips** through email, social media, or app.  
+- Implement **loyalty programs or incentives** for repeat purchases.  
+- Leverage **influencers** to showcase both comfort and style.
+
+---
+
+### 🎯 Actionable Takeaway
+- **Leverage high-satisfaction topics** to drive marketing campaigns.  
+- **Upsell via bundles** and improve **fit & size guidance**.  
+- Use **social proof and influencer partnerships** to maximize engagement and sales.  
+
 
 ---
 
