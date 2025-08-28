@@ -4,83 +4,49 @@ author: Chong Kang Wey
 title: "Applied Data Science Project Documentation"
 categories: ITD214
 ---
-## Project Background
-Business Goal: To optimize the Kapital fashion brand's product offerings, pricing strategies, and customer engagement to maximize sales and brand loyalty in the global market.
+👕 Analysing Customer Sentiments and Product Categories from Reddit
+🎯 Business Goal
+To optimize the Kapital fashion brand’s product offerings, pricing strategies, and customer engagement to maximize sales and brand loyalty in the global market.
 
-This project, titled "Analysing Customer Sentiments and Product Categories from Reddit," directly supports this business goal by leveraging text analytics from online fashion discussions on social media to inform and optimize Kapital’s global product, pricing, and engagement strategies. Our team's collective objective was to apply natural language processing (NLP) and machine learning techniques to extract meaningful business insights from unstructured text data from Reddit.
+This project supports that goal by leveraging text analytics from Reddit discussions to inform and optimize Kapital’s global product, pricing, and engagement strategies.
 
-The core problem statement addressed by our group is the challenge of manually sifting through vast amounts of online forum data to gauge public opinion and identify trends. The project automates this process by combining sentiment analysis and topic modeling to provide actionable insights.
+📝 Project Background
+Manually sifting through thousands of online discussions to gauge customer sentiment and emerging fashion trends is inefficient.
 
-## Work Accomplished
-Documenting the work done to accomplish the outcome is crucial for a data science project portfolio. This section details the complete workflow, from the raw data to the final insights.
-The project followed a structured data science workflow, from data preparation to model evaluation.
+This project automates the process using NLP + Machine Learning, combining sentiment analysis and topic modeling to extract actionable business insights.
 
-### Data Preparation
-Data preparation is a crucial first step, ensuring the data is clean and suitable for analysis. The process involved:
-
-1. Data Acquisition and Merging: The project began by loading two datasets, reddit_posts_latest_500.csv and reddit_comments_latest_500.csv. The text from both datasets was then combined into a single, comprehensive DataFrame.
-
-2. Cleaning and Preprocessing: The combined data was thoroughly cleaned by dropping duplicate entries and handling any missing values, resulting in a robust dataset of 44,454 unique entries.
-
-3. Text Normalization: The text data underwent several normalization steps essential for NLP. This included converting all text to lowercase to ensure consistency, removing punctuation, and filtering out common English stop words (such as "the," "is," and "a") to focus on more meaningful keywords.
-
-### Modelling
-With the data prepared, the next step was to build and train machine learning models to classify sentiment. The modeling process involved:
-
-1. Feature Extraction: The cleaned text was converted into numerical features using TfidfVectorizer, a technique that reflects how important a word is to a            document in a collection or corpus.
-
-2. Model Selection and Training: A pipeline was created to streamline the workflow of transforming the text and feeding it into different classification models.       Five machine learning models were chosen and evaluated using GridSearchCV and a StratifiedKFold cross-validation strategy to find the best-performing model and     its optimal hyperparameters. The models evaluated were:
-
-3. Final Model Selection: Based on the results, the SVM model was selected as the final model due to its superior accuracy.
-
-    Logistic Regression: Achieved an accuracy of 91% on the test data.
- 
-    Support Vector Machine (SVM): Achieved the highest accuracy of 92% on the test data.
- 
-    Random Forest: Achieved an accuracy of 90% on the test data.
- 
-    XGBoost: Achieved an accuracy of 88% on the test data.
- 
-    LightGBM: Achieved an accuracy of 90% on the test data.
-
-### Evaluation
-Model performance was evaluated using classification reports and confusion matrices. While the models showed high overall accuracy, the confusion matrix revealed a key insight: the models were highly accurate at predicting positive sentiment but were less effective at correctly identifying negative sentiment. This resulted in a higher number of false negatives (negative comments mistakenly classified as positive), indicating a potential bias towards the majority class (positive sentiment) in the training data.
-
-## Recommendation and Analysis
-The analysis and recommendations are based on a deeper look at the sentiment and topics identified from the data. The goal is to provide actionable insights that can directly influence Kapital's business strategies.
-
-Topic modeling with Latent Dirichlet Allocation (LDA) was applied to group discussions into five distinct topics. The best-performing sentiment model was then used to predict the sentiment of each topic, providing the following actionable insights:
-
-Topic ID	Top Keywords	 Positive Ratio	 Negative Ratio	    Recommended Action
-Topic 4	shirt shirts jeans pants jacket	0.74	0.26	🟢 High satisfaction. Kapital can leverage this sentiment to validate premium pricing.
-
-Topic 3	like shoes im wear look	0.69	0.31	🟢 High satisfaction. This indicates strong brand reception. Kapital should use these keywords in engagement.
-
-Topic 0	love outfit post cool fit	0.65	0.35	🟢 High satisfaction. This can be used to inform product strategies to match trends.
-
-Topic 2	like dont people think clothes	0.65	0.35	🟢 High satisfaction. Consider promoting products related to this theme and using it in marketing campaigns.
-
-Topic 1	fit pants im like bro	0.54	0.46	ℹ️ Moderate satisfaction. Kapital should investigate fit-related issues to optimize its product and pricing strategies.
-
-Deeper Analysis for Kapital's Strategies:
-This analysis provides a data-driven approach to optimize Kapital's business strategies.
-
-Product Strategy: The high positive sentiment in Topics 4, 3, 0, and 2, which are centered on core apparel like "shirts," "jeans," "shoes," and general "outfit" discussions, shows that the market is receptive to these categories. Kapital can be confident in its product line in these areas and can use these findings to inform future product development. The moderate sentiment in Topic 1 is a critical signal. Discussions around "fit" and "pants" show a higher negative ratio, which directly impacts customer satisfaction. Kapital's product team should investigate if this sentiment is a result of specific sizing issues or a lack of detailed product descriptions that could manage customer expectations.
-
-Pricing Strategy: Kapital is known for its high-quality, high-priced denim and workwear. The overwhelmingly positive sentiment across most topics validates this premium pricing model. The high satisfaction scores suggest that customers perceive a strong value-for-money proposition, where the quality justifies the price. Conversely, the more critical discussion in Topic 1 could be an opportunity for Kapital to reinforce its value proposition. For example, by highlighting the craftsmanship and unique fit of its denim, the brand can justify its pricing and address a key customer pain point.
-
-Engagement Strategy: The keywords from the high-sentiment topics can be used to inform Kapital's social media and community engagement. The brand could create content that directly responds to or incorporates popular terms like "love outfit," "cool fit," and discussions about specific product types like "jeans" and "jackets." For the mixed sentiment in Topic 1, Kapital's engagement team could proactively monitor and respond to conversations about "fit", offering sizing advice or connecting with customers directly to address their concerns. This shows a commitment to customer feedback and can turn a potential negative into a positive brand experience.
-
-## AI Ethics
-This project presents several ethical considerations that are important to discuss in a data science context. The use of AI and data requires careful thought to ensure the project is not only effective but also responsible.
-
-Privacy: The data used in this project is sourced from public Reddit posts and comments. While the data is publicly accessible, it may still contain personally identifiable information (PII). Using this data for commercial purposes, even if it is aggregated for insights, could raise privacy concerns if users are not aware of or have not consented to such use. This highlights the importance of data anonymization and understanding the terms of service of the platforms from which data is scraped.
-
-Fairness and Bias: There are several potential sources of bias in this project. The VADER sentiment analyzer, a rule-based model, may not be equipped to handle the nuances of slang, sarcasm, or context-specific language, potentially misclassifying sentiment and introducing bias. Furthermore, the dataset from Reddit is not a representative sample of the global population. It likely over-represents certain demographics and viewpoints, leading to a model that performs well on this specific data but may be biased against other communities or groups. This could result in an inaccurate understanding of a wider customer base.
-
-Accuracy: While the models achieved high overall accuracy (e.g., SVM at 92%), a deeper look at the confusion matrices revealed a significant issue: the models were less effective at correctly identifying negative sentiment. This resulted in a higher number of false negatives, meaning negative comments were often misclassified as positive. This is a critical ethical concern because a business might miss valuable feedback about product failures or customer complaints, leading to a false sense of security and a failure to address real issues.
-
-Accountability and Transparency: The project uses complex, black-box models like XGBoost and LightGBM. While these models often deliver high performance, their internal workings are not easily interpretable. This lack of transparency makes it difficult to explain why a particular sentiment was predicted for a piece of text. In a business context, this poses an issue for accountability—if a recommendation is made based on a model's output, it's hard to trace the exact reasoning behind it. This is in contrast to a more transparent model like Logistic Regression, which can provide coefficients to explain the influence of certain words on the prediction.
-
-## Source Codes and Datasets
-https://github.com/kangwey-hash/ITD214_Project_KW
+🔧 Workflow
+1. Data Preparation
+Data Acquisition & Merging → Combined Reddit posts & comments → 44,454 unique entries.
+Cleaning & Preprocessing → Removed duplicates, handled missing values.
+Text Normalization → Lowercasing, punctuation removal, stopword filtering.
+2. Modeling
+Feature Extraction → TF-IDF Vectorizer.
+Model Training (with GridSearchCV + StratifiedKFold)
+Logistic Regression → 91%
+SVM → 92% (best)
+Random Forest → 90%
+XGBoost → 88%
+LightGBM → 90%
+✅ Final Model Selected: SVM (highest accuracy).
+3. Evaluation
+High accuracy overall, but models showed bias toward positive sentiment.
+Negative sentiment often misclassified → risk of missing critical customer feedback.
+📊 Topic-Sentiment Insights
+Topic ID	Top Keywords	Positive Ratio	Negative Ratio	Insight
+4	shirt, shirts, jeans, pants	0.74	0.26	🟢 High satisfaction → validates premium pricing
+3	like, shoes, wear, look	0.69	0.31	🟢 Strong brand reception, leverage in engagement
+0	love, outfit, post, cool, fit	0.65	0.35	🟢 Inform product strategies to match trends
+2	like, dont, people, think, clothes	0.65	0.35	🟢 Promote related themes in marketing campaigns
+1	fit, pants, im, like, bro	0.54	0.46	⚠️ Moderate satisfaction → investigate sizing/fit issues
+📌 Recommendations
+Product Strategy → Strengthen high-performing categories (shirts, jeans, shoes, outfits). Investigate sizing/fit issues in pants.
+Pricing Strategy → Positive sentiment supports Kapital’s premium pricing model. Reinforce value by highlighting craftsmanship.
+Engagement Strategy → Use customer language (“cool fit”, “love outfit”) in marketing. Proactively engage in “fit” discussions to address concerns.
+⚖️ Ethical Considerations
+Privacy → Reddit data is public, but anonymization & ToS compliance are key.
+Bias → Dataset overrepresents certain demographics; sentiment models may miss sarcasm/slang.
+Accuracy → Positive-heavy classification risks overlooking complaints.
+Transparency → Complex models (XGBoost, LightGBM) are less interpretable than simpler ones.
+📂 Source Code & Data
+🔗 GitHub Repository
