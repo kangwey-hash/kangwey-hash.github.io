@@ -31,18 +31,18 @@ With the data prepared, the next step was to build and train machine learning mo
 
 2. Model Selection and Training: A pipeline was created to streamline the workflow of transforming the text and feeding it into different classification models.       Five machine learning models were chosen and evaluated using GridSearchCV and a StratifiedKFold cross-validation strategy to find the best-performing model and     its optimal hyperparameters. The models evaluated were:
 
- Logistic Regression: Achieved an accuracy of 91% on the test data.
- 
- Support Vector Machine (SVM): Achieved the highest accuracy of 92% on the test data.
- 
- Random Forest: Achieved an accuracy of 90% on the test data.
- 
- XGBoost: Achieved an accuracy of 88% on the test data.
- 
- LightGBM: Achieved an accuracy of 90% on the test data.
-
 3. Final Model Selection: Based on the results, the SVM model was selected as the final model due to its superior accuracy.
-   
+
+    Logistic Regression: Achieved an accuracy of 91% on the test data.
+ 
+    Support Vector Machine (SVM): Achieved the highest accuracy of 92% on the test data.
+ 
+    Random Forest: Achieved an accuracy of 90% on the test data.
+ 
+    XGBoost: Achieved an accuracy of 88% on the test data.
+ 
+    LightGBM: Achieved an accuracy of 90% on the test data.
+
 ### Evaluation
 Model performance was evaluated using classification reports and confusion matrices. While the models showed high overall accuracy, the confusion matrix revealed a key insight: the models were highly accurate at predicting positive sentiment but were less effective at correctly identifying negative sentiment. This resulted in a higher number of false negatives (negative comments mistakenly classified as positive), indicating a potential bias towards the majority class (positive sentiment) in the training data.
 
@@ -71,8 +71,6 @@ Pricing Strategy: Kapital is known for its high-quality, high-priced denim and w
 
 Engagement Strategy: The keywords from the high-sentiment topics can be used to inform Kapital's social media and community engagement. The brand could create content that directly responds to or incorporates popular terms like "love outfit," "cool fit," and discussions about specific product types like "jeans" and "jackets." For the mixed sentiment in Topic 1, Kapital's engagement team could proactively monitor and respond to conversations about "fit", offering sizing advice or connecting with customers directly to address their concerns. This shows a commitment to customer feedback and can turn a potential negative into a positive brand experience.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
-
 ## AI Ethics
 This project presents several ethical considerations that are important to discuss in a data science context. The use of AI and data requires careful thought to ensure the project is not only effective but also responsible.
 
@@ -83,8 +81,6 @@ Fairness and Bias: There are several potential sources of bias in this project. 
 Accuracy: While the models achieved high overall accuracy (e.g., SVM at 92%), a deeper look at the confusion matrices revealed a significant issue: the models were less effective at correctly identifying negative sentiment. This resulted in a higher number of false negatives, meaning negative comments were often misclassified as positive. This is a critical ethical concern because a business might miss valuable feedback about product failures or customer complaints, leading to a false sense of security and a failure to address real issues.
 
 Accountability and Transparency: The project uses complex, black-box models like XGBoost and LightGBM. While these models often deliver high performance, their internal workings are not easily interpretable. This lack of transparency makes it difficult to explain why a particular sentiment was predicted for a piece of text. In a business context, this poses an issue for accountability—if a recommendation is made based on a model's output, it's hard to trace the exact reasoning behind it. This is in contrast to a more transparent model like Logistic Regression, which can provide coefficients to explain the influence of certain words on the prediction.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce bibendum neque eget nunc mattis eu sollicitudin enim tincidunt. Vestibulum lacus tortor, ultricies id dignissim ac, bibendum in velit. Proin convallis mi ac felis pharetra aliquam. Curabitur dignissim accumsan rutrum. In arcu magna, aliquet vel pretium et, molestie et arcu. Mauris lobortis nulla et felis ullamcorper bibendum. Phasellus et hendrerit mauris. Proin eget nibh a massa vestibulum pretium. Suspendisse eu nisl a ante aliquet bibendum quis a nunc. Praesent varius interdum vehicula. Aenean risus libero, placerat at vestibulum eget, ultricies eu enim. Praesent nulla tortor, malesuada adipiscing adipiscing sollicitudin, adipiscing eget est.
 
 ## Source Codes and Datasets
 https://github.com/kangwey-hash/ITD214_Project_KW
