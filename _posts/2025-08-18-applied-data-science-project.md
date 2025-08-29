@@ -8,123 +8,134 @@ categories: ITD214
 # 👕 Analysing Customer Sentiments and Product Categories from Reddit
 
 ### 🎯 Business Goal
-To optimize the **Kapital fashion brand’s** product offerings, pricing strategies, and customer engagement to **maximize sales and brand loyalty in the global market**.
+To optimize the **Kapital fashion brand’s** product offerings, pricing strategies, and customer engagement in order to maximize global sales and strengthen brand loyalty.  
 
-This project supports that goal by leveraging **text analytics from Reddit discussions** to inform and optimize Kapital’s global **product, pricing, and engagement strategies**.
+This project leverages **NLP (Natural Language Processing)** and **Machine Learning** on Reddit discussions to uncover customer sentiment and emerging fashion trends, providing **data-driven recommendations** for Kapital’s global strategy.
 
 ---
 
 ### 📝 Project Background
-Manually sifting through thousands of online discussions to gauge customer sentiment and emerging fashion trends is inefficient.  
+Understanding consumer opinion in fashion is critical but challenging when data comes from **unstructured, large-scale sources** like Reddit.  
 
-This project automates the process using **NLP + Machine Learning**, combining **sentiment analysis** and **topic modeling** to extract **actionable business insights**.
+This project automates insights generation by combining:
+
+- **Sentiment Analysis** → measures positive vs. negative attitudes.  
+- **Topic Modeling (LDA)** → extracts themes and trends in apparel discussions.  
+
+Together, these methods bridge raw online chatter into actionable insights for business strategy.
+
+---
+
+### 🏗 Work Accomplished
+Documenting the work done to accomplish the outcome is crucial for a data science project portfolio.  
+This section details the complete workflow, from raw data to final insights. The project followed a **structured data science workflow**, covering data preparation, model training, evaluation, and insights extraction.
 
 ---
 
 ### 🔧 Workflow
 
 #### 1. Data Preparation
-- **Data Acquisition & Merging** → Combined Reddit posts & comments → **44,454 unique entries**.  
-- **Cleaning & Preprocessing** → Removed duplicates, handled missing values.  
-- **Text Normalization** → Lowercasing, punctuation removal, stopword filtering.  
+- **Data Acquisition & Merging** → Reddit posts + comments → **44,454 unique entries**.  
+- **Cleaning & Preprocessing** → removed duplicates, handled missing values.  
+- **Text Normalization** → lowercasing, punctuation removal, stopword filtering.  
 
 #### 2. Modeling
 - **Feature Extraction** → TF-IDF Vectorizer.  
-- **Model Training (with GridSearchCV + StratifiedKFold)**  
-  - Logistic Regression → 91%  
-  - SVM → **92% (best)**  
-  - Random Forest → 90%  
-  - XGBoost → 88%  
-  - LightGBM → 90%  
-- ✅ **Final Model Selected: SVM** (highest accuracy).  
+- **Model Training** (with GridSearchCV + StratifiedKFold) on 5 ML models:
+  - Logistic Regression → 91%
+  - Random Forest → 90%
+  - XGBoost → 88%
+  - LightGBM → 90%
+  - Support Vector Machine (SVM) → 92% ✅ (Best)
 
 #### 3. Evaluation
-- High accuracy overall, but models showed **bias toward positive sentiment**.  
-- Negative sentiment often misclassified → risk of missing **critical customer feedback**.  
+- **Classification Reports & Confusion Matrices** showed high overall accuracy.  
+- **Key Issue** → Models predict positive sentiment well, but misclassify many negative reviews → leads to false positives and risks overlooking customer complaints.  
 
 ---
 
-### 📊 Topic-Sentiment Insights
+### 🧾 Detailed Model Evaluation Summary
 
-| Topic ID | Top Keywords                     | Positive Ratio | Negative Ratio | Insight |
-|----------|----------------------------------|----------------|----------------|---------|
-| **4**    | shirt, shirts, jeans, pants      | 0.74           | 0.26           | 🟢 High satisfaction → validates premium pricing |
-| **3**    | like, shoes, wear, look          | 0.69           | 0.31           | 🟢 Strong brand reception, leverage in engagement |
-| **0**    | love, outfit, post, cool, fit    | 0.65           | 0.35           | 🟢 Inform product strategies to match trends |
-| **2**    | like, dont, people, think, clothes | 0.65         | 0.35           | 🟢 Promote related themes in marketing campaigns |
-| **1**    | fit, pants, im, like, bro        | 0.54           | 0.46           | ⚠️ Moderate satisfaction → investigate sizing/fit issues |
+| Model | Accuracy | Negative Recall | Positive Recall |
+|-------|---------|----------------|----------------|
+| Logistic Regression | 91% | 0.70 | 0.97 |
+| SVM (Best) | 92% | 0.69 | 0.98 |
+| Random Forest | 90% | 0.61 | 0.97 |
+| XGBoost | 88% | 0.49 | 0.98 |
+| LightGBM | 90% | 0.58 | 0.98 |
 
----
-## 🔎 Deeper Topic Analysis & Recommendations
-
-📊 **Business Objectives & Actionable Insights:**  
-Our topic modeling and sentiment analysis revealed consistent **high customer satisfaction across most themes**, with one area (fit & pants) showing slightly more mixed reviews. Below is the breakdown:
-
-| Topic ID | Top Keywords | Reviews Analyzed | Positive % | Negative % | Recommendation |
-|----------|--------------|----------------|------------|------------|----------------|
-| 0 | love outfit post cool fit | 7,505 | 82.7% | 17.3% | Leverage styling discussions in trend-driven product launches and social engagement campaigns. |
-| 1 | fit pants im like bro | 9,528 | 77.4% | 22.6% | Investigate fit-related issues (pants sizing, product descriptions) to improve customer satisfaction. |
-| 2 | like dont people think clothes | 11,157 | 82.6% | 17.4% | Promote products/services related to general apparel discussions in marketing campaigns. |
-| 3 | like shoes im wear look | 8,888 | 84.9% | 15.1% | Emphasize fit and comfort in shoes and apparel; integrate keywords into engagement content. |
-| 4 | shirt shirts jeans pants jacket | 7,376 | 87.1% | 12.9% | Validate premium pricing; highlight staple apparel as flagship items. |
+**Key Findings:**  
+- All models achieve high accuracy (≥88%).  
+- **Bias toward positive sentiment** → high recall for positive, weaker for negative.  
+- **Critical issue:** False positives → negative reviews misclassified as positive.  
+- **Recommendation:** Deploy SVM with fine-tuning, consider data rebalancing for negative class.
 
 ---
 
-### 📌 Summary of Insights  
+### 🔎 Topic-Sentiment Insights Methodology
+- **Runs LDA topic modeling** to group reviews into topics (e.g., clothes, shoes, pants).  
+- **Assigns each review a dominant topic** based on LDA results.  
+- **Predicts sentiment** of each review using the best-performing ML model.  
+- **Aggregates results by topic:**  
+  - Calculate **average sentiment score** (positive vs. negative ratio).  
+  - Identify **top keywords** that describe each topic.  
+- **Business recommendations** derived:
+  - Mostly positive → promote & market.  
+  - Mostly negative → investigate & improve.  
+  - Mixed → opportunity to grow.
 
-- **High Satisfaction (Topics 0, 2, 3, 4):** Customers show consistently positive sentiment (82–87%) across core categories: *outfits, shirts, jeans, jackets, shoes*. These themes validate **Kapital’s premium product strategy** and can be leveraged in **marketing campaigns**.  
-- **Moderate Satisfaction (Topic 1 - Fit & Pants):** Only ~77% positive. This is a **critical product signal**. Kapital should **review sizing issues** (pants fit, shirt necklines) and possibly refine **size charts, body-inclusive fits, or clearer product details**.  
-- **Strategic Opportunity:** By addressing fit-related concerns, Kapital can **reduce negative sentiment by ~10–15%**, boosting customer satisfaction and strengthening its premium positioning.  
- 
+---
 
-### 📌 Recommendations
-Based on the deeper topic analysis and sentiment insights, here are strategic recommendations for Kapital:
+### 📊 Deeper Topic Analysis & Recommendations
+
+| Topic ID | Keywords | Reviews Analyzed | Positive % | Negative % | Recommendation |
+|----------|---------|----------------|------------|------------|----------------|
+| 0 | love, outfit, post, cool, fit | 7,505 | 82.7% | 17.3% | Leverage outfit/styling discussions in trend-driven launches and social engagement campaigns. |
+| 1 | fit, pants, im, like, bro | 9,528 | 77.4% | 22.6% | Investigate fit issues (pants sizing, body types); update size guides. |
+| 2 | like, dont, people, think, clothes | 11,157 | 82.6% | 17.4% | Promote general apparel themes in campaigns; highlight versatility. |
+| 3 | like, shoes, im, wear, look | 8,888 | 84.9% | 15.1% | Stress comfort + style in footwear; integrate keywords into marketing. |
+| 4 | shirt, shirts, jeans, pants, jacket | 7,376 | 87.1% | 12.9% | Flagship apparel → reinforce premium positioning (denim, jackets). |
+
+**Strategic Insights:**  
+- **Strengths:** Topics 0, 2, 3, 4 → consistently high satisfaction (82–87%) validates **premium pricing and quality-driven positioning**.  
+- **Weakness:** Topic 1 → only 77% positive, highlighting **fit-related concerns**. Addressing sizing issues can **reduce dissatisfaction by 10–15%**.  
+- **Opportunities:** Reinforce craftsmanship, uniqueness, and premium value while resolving fit issues to **boost brand loyalty**.
 
 ---
 
 ### 🛍️ Product Recommendations
-- Focus on **style-conscious, versatile, high-quality apparel**.  
-- Highlight **unique/vintage pieces, seasonal collections, and limited editions**.  
-- Offer **bundles** (e.g., shirts + pants) to increase **Average Order Value (AOV)**.  
-- Provide **fit guides and size recommendations** to reduce returns and enhance customer satisfaction.
-
----
+- Prioritize **style-conscious, versatile, high-quality apparel**.  
+- Highlight **seasonal collections, limited editions, and vintage pieces**.  
+- Introduce **bundle deals** (e.g., shirt + pants) to increase **AOV**.  
+- Offer **detailed fit guides and size recommendations** to cut return rates.
 
 ### 💰 Pricing Recommendations
-- Set **premium pricing** for high-demand or exclusive style items.  
-- Use **value-based bundles** for essentials to encourage larger purchases.  
-- Ensure **competitive pricing** for standard items to maintain market share.  
-- Offer **strategic promotions** around trends or seasonal launches.
-
----
+- Maintain **premium pricing** for high-demand/exclusive products.  
+- Use **value-based bundles** to encourage larger basket sizes.  
+- Stay competitive on essentials to safeguard market share.  
+- Apply **seasonal promotions** for trend launches.
 
 ### 📢 Engagement & Marketing Recommendations
-- Encourage **user-generated content (UGC)** like “Outfit of the Day” posts.  
-- Run **social campaigns** highlighting positive reviews and real-life wearability.  
-- Provide **outfit guides and style tips** through email, social media, or app.  
-- Implement **loyalty programs or incentives** for repeat purchases.  
-- Leverage **influencers** to showcase both comfort and style.
-
----
+- Encourage **UGC campaigns** (e.g., “Outfit of the Day”).  
+- Spotlight **real-life wearability and positive reviews**.  
+- Provide **outfit guides & styling tips** across channels.  
+- Launch **loyalty programs** to reward repeat customers.  
+- Collaborate with **influencers** to highlight comfort + style.
 
 ### 🎯 Actionable Takeaway
-- **Leverage high-satisfaction topics** to drive marketing campaigns.  
-- **Upsell via bundles** and improve **fit & size guidance**.  
-- Use **social proof and influencer partnerships** to maximize engagement and sales.  
-
+- Double down on **high-satisfaction apparel** to drive sales.  
+- Address **fit-related issues** to reduce churn.  
+- Use **social proof and influencer content** to build trust and expand reach.
 
 ---
 
 ### ⚖️ Ethical Considerations
-- **Privacy** → Reddit data is public, but anonymization & ToS compliance are key.  
-- **Bias** → Dataset overrepresents certain demographics; sentiment models may miss sarcasm/slang.  
-- **Accuracy** → Positive-heavy classification risks overlooking complaints.  
-- **Transparency** → Complex models (XGBoost, LightGBM) are less interpretable than simpler ones.  
+- **Privacy:** Reddit data is public, anonymize and comply with ToS.  
+- **Bias:** Reddit demographics are not representative; sentiment models may misinterpret slang/sarcasm.  
+- **Accuracy:** Positive-heavy classification risks overlooking negative reviews.  
+- **Transparency:** Advanced models (XGBoost/LightGBM) less interpretable than simpler models.
 
 ---
 
 ### 📂 Source Code & Data
 🔗 [GitHub Repository](https://github.com/kangwey-hash/ITD214_Project_KW)
-
----
-
