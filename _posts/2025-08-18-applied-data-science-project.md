@@ -204,4 +204,3 @@ Documenting the work done to accomplish the outcome is crucial for a data scienc
 ### 📂 Source Code & Data
 🔗 [GitHub Repository](https://github.com/kangwey-hash/ITD214_Project_KW_1)
 
-There is 2 ipynb file both at most the same good to use Kapital_
