@@ -201,5 +201,5 @@ Documenting the work done to accomplish the outcome is crucial for a data scienc
 
 ---
 
-## 📂 Source Code & Data
-🔗 GitHub Repository
+### 📂 Source Code & Data
+🔗 [GitHub Repository](https://github.com/kangwey-hash/ITD214_Project_KW)
